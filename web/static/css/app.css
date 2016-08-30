@@ -1,2 +1,4 @@
 /* This file is for your main application css. */
-@import "../vendor/dist/css/materialize.css"
+.maring-top-2x {
+  margin-top: 2rem; 
+}
