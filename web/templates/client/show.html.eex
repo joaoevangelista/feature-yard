@@ -5,10 +5,10 @@
 </div>
 <div class="row">
   <div class="col s12">
-    <div class="right-align">
-      <%= link "New feature", to: client_feature_path(@conn, :new, @client), class: "waves-effect waves-cyan" %>
+    <div class="left-align">
+      <%= link "New feature", to: client_feature_path(@conn, :new, @client), class: "btn blue waves-effect waves-blue" %>
       &nbsp;
-      <%= link "Edit client", to: client_path(@conn, :edit, @client), class: "waves-effect waves-cyan" %>
+      <%= link "Edit client", to: client_path(@conn, :edit, @client), class: "btn blue waves-effect waves-blue" %>
     </div>
 
   </div>

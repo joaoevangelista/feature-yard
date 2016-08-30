@@ -26,7 +26,7 @@
         <tr>
           <td><%= client.name %></td>
           <td>
-            <%= link "Show", to: client_path(@conn, :show, client), class: "waves-effect waves-blue" %>
+            <%= link "Features", to: client_path(@conn, :show, client), class: "waves-effect waves-blue" %>
           </td>
           <td>
             <%= link "Edit", to: client_path(@conn, :edit, client), class: "waves-effect waves-blue" %>
