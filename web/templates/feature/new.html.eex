@@ -7,9 +7,3 @@
 
 <%= render "form.html", changeset: @changeset,
 action: client_feature_path(@conn, :create, @client) %>
-
-<div class="row">
-  <div class="col s12">
-    <%= link "Back", to: client_path(@conn, :index, @client) %>
-  </div>
-</div>
