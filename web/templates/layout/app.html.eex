@@ -15,15 +15,14 @@
   </head>
 
   <body>
-    <nav role="navigation">
+    <nav class="deep-orange" role="navigation">
       <ul class="nav nav-pills pull-right">
-        <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+        <li><a href="/">Feature Yard</a></li>
       </ul>
     </nav>
-    <span class="logo"></span>
     <div class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <%= render "_info_notification", info: get_flash(@conn, :info)  %>
+      <%= render "_alert_notification", alert: get_flash(@conn, :error)  %>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>

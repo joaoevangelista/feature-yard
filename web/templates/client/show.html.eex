@@ -29,13 +29,19 @@
     <%= for feature <- @client.features do %>
         <tr>
           <td><%= feature.name %></td>
-          <td><%= feature.key %></td>
-          <td><%= feature.enabled %></td>
+          <td><code><%= feature.key %></code></td>
+          <td>
+            <%= if feature.enabled do %>
+            <i class="teal-text material-icons">done</i>
+            <% else %>
+            <i class="blue-grey-text material-icons">highlight_off</i>
+            <% end %>
+        </td>
           <td class="text-right">
-            <%= link "Edit", to: client_feature_path(@conn, :edit, feature, feature.client_id), class: "waves-effect waves-blue btn-flat" %>
+            <%= link "Edit", to: client_feature_path(@conn, :edit, feature.client_id, feature), class: "waves-effect waves-blue btn-flat" %>
           </td>
           <td class="text-right">
-            <%= link "Remove", to: client_feature_path(@conn, :delete, feature, feature.client_id), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-red btn-flat" %>
+            <%= link "Remove", to: client_feature_path(@conn, :delete, feature.client_id, feature), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-red btn-flat" %>
           </td>
         </tr>
     <% end %>

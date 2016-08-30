@@ -1,0 +1,12 @@
+<%= if @info do %>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Info</span>
+        <p><%= @info %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@ defmodule Featureyard.FeatureController do
     render(conn, "new.html", changeset: changeset, client: client)
   end
 
-  def create(conn, %{"feature" => feature_params}) do
+  def create(conn, %{"feature" => feature_params, "client_id" => client_id}) do
     changeset = Feature.changeset(%Feature{}, feature_params)
 
     case Repo.insert(changeset) do
@@ -20,27 +20,30 @@ defmodule Featureyard.FeatureController do
         |> put_flash(:info, "Feature created successfully.")
         |> redirect(to: client_path(conn, :show, loaded.client.id))
       {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset,
+         client: %Client{id: client_id})
     end
   end
 
-  def edit(conn, %{"id" => id}) do
-    feature = Repo.get!(Feature, id)
+  def edit(conn, %{"id" => id, "client_id" => client_id}) do
+    feature = Repo.get!(Feature, id) |> Repo.preload(:client)
     changeset = Feature.changeset(feature)
-    render(conn, "edit.html", feature: feature, changeset: changeset)
+    render(conn, "edit.html", feature: feature, changeset: changeset, client: %Client{id: client_id})
   end
 
-  def update(conn, %{"id" => id, "feature" => feature_params}) do
+  def update(conn, %{"id" => id, "client_id" => client_id, "feature" => feature_params}) do
     feature = Repo.get!(Feature, id)
     changeset = Feature.changeset(feature, feature_params)
 
     case Repo.update(changeset) do
       {:ok, feature} ->
+        loaded = Repo.preload feature, :client
         conn
         |> put_flash(:info, "Feature updated successfully.")
-        |> redirect(to: client_path(conn, :show, feature.client_id))
+        |> redirect(to: client_path(conn, :show, loaded.client))
       {:error, changeset} ->
-        render(conn, "edit.html", feature: feature, changeset: changeset)
+        render(conn, "edit.html", feature: feature,
+         changeset: changeset, client: %Client{id: client_id})
     end
   end
 
