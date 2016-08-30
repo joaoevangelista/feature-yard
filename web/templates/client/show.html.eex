@@ -16,13 +16,13 @@
 
 <div class="row">
   <div class="col s12">
-    <table class="table">
+    <table class="responsive-table">
       <thead>
         <tr>
           <th>Name</th>
           <th>Key</th>
           <th>Enabled</th>
-          <th></th>
+          <th>Options</th>
           <th></th>
         </tr>
       </thead>
