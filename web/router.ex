@@ -1,5 +1,6 @@
 defmodule Featureyard.Router do
   use Featureyard.Web, :router
+  use Addict.RoutesHelper
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -21,6 +22,10 @@ defmodule Featureyard.Router do
        resources "/features", FeatureController, except: [:index, :show]
     end
 
+  end
+
+  scope "/" do
+    addict :routes
   end
 
   # Other scopes may use custom stacks.
