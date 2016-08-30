@@ -1,0 +1,29 @@
+<h2>Listing clients</h2>
+
+<table class="responsive-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for client <- @clients do %>
+    <tr>
+      <td><%= client.name %></td>
+      <td>
+        <%= link "Show", to: client_path(@conn, :show, client), class: "waves-effect waves-blue btn-flat" %>
+      </td>
+      <td>
+        <%= link "Edit", to: client_path(@conn, :edit, client), class: "waves-effect waves-blue btn-flat" %>
+      </td>
+      <td>
+        <%= link "Delete", to: client_path(@conn, :delete, client), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-red btn-flat" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New client", to: client_path(@conn, :new) %>

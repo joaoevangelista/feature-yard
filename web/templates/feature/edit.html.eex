@@ -1,0 +1,6 @@
+<h2>Edit feature</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: client_feature_path(@conn, :update, @feature, @feature.client_id) %>
+
+<%= link "Back", to: client_path(@conn, :index, @feature.client_id) %>

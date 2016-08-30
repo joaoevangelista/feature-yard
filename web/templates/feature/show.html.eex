@@ -1,0 +1,28 @@
+<h2>Show feature</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @feature.name %>
+  </li>
+
+  <li>
+    <strong>Key:</strong>
+    <%= @feature.key %>
+  </li>
+
+  <li>
+    <strong>Enabled:</strong>
+    <%= @feature.enabled %>
+  </li>
+
+  <li>
+    <strong>Client:</strong>
+    <%= @feature.client_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: client_feature_path(@conn, :edit, @feature.client_id, @feature) %>
+<%= link "Back", to: client_feature_path(@conn, :index, @feature.client_id) %>

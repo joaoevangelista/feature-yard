@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col s12">
+    <div class="right-align">
+      <%= link "New feature", to: client_feature_path(@conn, :new, @client) %>
+      &nbsp;
+      <%= link "Edit", to: client_path(@conn, :edit, @client) %>
+    </div>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <h2>Features for <%= @client.name %></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Key</th>
+          <th>Enabled</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+    <%= for feature <- @client.features do %>
+        <tr>
+          <td><%= feature.name %></td>
+          <td><%= feature.key %></td>
+          <td><%= feature.enabled %></td>
+          <td class="text-right">
+            <%= link "Edit", to: client_feature_path(@conn, :edit, feature, feature.client_id), class: "waves-effect waves-blue btn-flat" %>
+          </td>
+          <td class="text-right">
+            <%= link "Remove", to: client_feature_path(@conn, :delete, feature, feature.client_id), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-red btn-flat" %>
+          </td>
+        </tr>
+    <% end %>
+      </tbody>
+    </table>
+    <!-- features -->
+  </div>
+</div>

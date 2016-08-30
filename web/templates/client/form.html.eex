@@ -1,0 +1,25 @@
+<div class="row">
+<%= form_for @changeset, @action, fn f -> %>
+<%= if @changeset.action do %>
+<div class="alert alert-danger">
+  <p>Oops, something went wrong! Please check the errors below.</p>
+</div>
+<% end %>
+
+<div class="col s12">
+  <div class="row">
+    <div class="input-field col s12">
+      <%= label f, :name %>
+      <%= text_input f, :name %>
+      <%= error_tag f, :name %>
+    </div>
+
+  </div>
+</div>
+<div class="form-group">
+  <button class="btn btn-large waves-effect waves-light blue" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+</div>
+<% end %>
+</div>
