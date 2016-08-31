@@ -1,36 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Feature Yard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/fonts/roboto/Roboto-Regular.ttf" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-  </head>
+  <title>Feature Yard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/fonts/roboto/Roboto-Regular.ttf" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+</head>
 
-  <body>
-    <nav class="deep-orange" role="navigation">
-      <ul class="nav nav-pills pull-right">
-        <li><a href="/">Feature Yard</a></li>
+<body>
+  <nav class="deep-orange">
+    <div class="nav-wrapper container">
+      <a href="#!" class="brand-logo">Feature Yard</a>
+      <ul class="right hide-on-med-and-down">
+        <%= if Addict.Helper.is_logged_in(@conn) do %>
+        <li><%= link "Sign Out", to: logout_path(@conn, :logout), method: :delete %></li>
+        <% else %>
+        <li><%= link "Sign In", to: login_path(@conn, :login) %></li>
+        <% end %>
+
       </ul>
-    </nav>
-    <div class="container">
-      <%= render "_info_notification", info: get_flash(@conn, :info)  %>
-      <%= render "_alert_notification", alert: get_flash(@conn, :error)  %>
+      <ul class="side-nav" id="nav-mobile">
+        <%= if Addict.Helper.is_logged_in(@conn) do %>
+        <li><%= link "Sign Out", to: logout_path(@conn, :logout), method: :delete %></li>
+        <% else %>
+        <li><%= link "Sign In", to: login_path(@conn, :login) %></li>
+        <% end %>
+      </ul>
+       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+  <div class="container">
+    <%= render "_info_notification", info: get_flash(@conn, :info)  %>
+    <%= render "_alert_notification", alert: get_flash(@conn, :error)  %>
 
-    </div> <!-- /container -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-  </body>
+    <main role="main">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+
+  </div> <!-- /container -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+</body>
 </html>

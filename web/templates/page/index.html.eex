@@ -1,6 +1,6 @@
 <div class="row margin-top-2x" >
   <div class="col s12 m6">
-    <img src="/images/tree.svg" class="center-align" height="500" alt="" />
+    <img src="/images/tree.svg" class="img-responsive center-align" height="500" alt="" />
   </div>
   <div class="col s12 m6 center-align">
     <h2>Feature Yard</h2>
