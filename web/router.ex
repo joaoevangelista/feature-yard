@@ -29,7 +29,9 @@ defmodule Featureyard.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Featureyard do
-  #   pipe_through :api
-  # end
+   scope "/api", Featureyard do
+     pipe_through :api
+
+     get "/features", FeatureAPIController, :fetch_features_for_client
+   end
 end
