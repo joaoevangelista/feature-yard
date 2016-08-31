@@ -4,6 +4,9 @@ defmodule Featureyard.FeatureController do
   alias Featureyard.Feature
   alias Featureyard.Client
 
+  plug Addict.Plugs.Authenticated when action in [:new, :create, :edit, :update, :delete]
+  plug :action
+
   def new(conn, %{"client_id" => client_id}) do
     client = Repo.get!(Client, client_id)
     changeset = Feature.changeset(%Feature{client_id: client.id})

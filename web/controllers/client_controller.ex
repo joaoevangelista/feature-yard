@@ -3,6 +3,10 @@ defmodule Featureyard.ClientController do
 
   alias Featureyard.Client
 
+  plug Addict.Plugs.Authenticated when action in [:new, :create, :edit,
+   :update, :delete, :index, :show]
+  plug :action
+
   def index(conn, _params) do
     clients = Repo.all(Client)
     render(conn, "index.html", clients: clients)
