@@ -41,6 +41,7 @@ defmodule Featureyard.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:addict, "~> 0.3"},
+     { :uuid, "~> 1.1" },
      {:credo, "~> 0.4", only: [:dev, :test]}]
   end
 

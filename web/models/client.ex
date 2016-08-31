@@ -3,6 +3,7 @@ defmodule Featureyard.Client do
 
   schema "clients" do
     field :name, :string
+    field :key, :string, default: UUID.uuid1()
     has_many :features, Featureyard.Feature
     timestamps()
   end
