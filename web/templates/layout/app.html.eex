@@ -38,8 +38,8 @@
   </nav>
 
   <div class="container">
-    <%= render "_info_notification", info: get_flash(@conn, :info)  %>
-    <%= render "_alert_notification", alert: get_flash(@conn, :error)  %>
+    <%= render "_info_notification.html", info: get_flash(@conn, :info)  %>
+    <%= render "_alert_notification.html", alert: get_flash(@conn, :error)  %>
 
     <main role="main">
       <%= render @view_module, @view_template, assigns %>
