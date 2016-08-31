@@ -95,7 +95,6 @@
 
       if(btn_register){
         document.getElementById("btn-register").addEventListener("click", function(ev) {
-          var name = document.getElementById('txt-name').value;
           var email = document.getElementById('txt-email').value;
           var password = document.getElementById('txt-password').value;
           var csrf_token = document.getElementById('csrf-token').value;
