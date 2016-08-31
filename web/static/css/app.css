@@ -12,3 +12,7 @@ nav .brand-logo {
   max-width: 100%;
   height: auto;
 }
+.turbolinks-progress-bar {
+  height: 2px;
+  background-color: #2196F3;
+}

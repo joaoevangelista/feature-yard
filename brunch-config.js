@@ -54,9 +54,6 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/web\/static\/vendor/]
-    },
-    copycat: {
-      "fonts": ["node_modules/materialize-css/dist/fonts/roboto"] // copy node_modules/bootstrap-sass/assets/fonts/bootstrap/* to priv/static/fonts/
     }
   },
 
@@ -68,7 +65,7 @@ exports.config = {
   },
 
   npm: {
-    whitelist: ["phoenix", "phoenix_html", "jquery", "bootstrap-sass"],
+    whitelist: ["phoenix", "phoenix_html", "jquery" ,"turbolinks"],
     enabled: true
   }
 };
