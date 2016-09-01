@@ -23,7 +23,7 @@
         </p>
         </div>
         <div class="card-action">
-          <button type="button" data-clipboard-target="#key-box" class="btn btn-card orange-text copyable">Copy</a>
+          <button type="button" data-clipboard-target="#key-box" class="btn waves-effect waves-orange btn-card orange-text copyable">Copy</a>
         </div>
       </div>
     </div>
