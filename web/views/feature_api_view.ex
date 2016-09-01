@@ -1,8 +1,8 @@
-defmodule Featureyard.FeatureAPIView do
+defmodule Featureyard.Api.FeatureView do
   use Featureyard.Web, :view
 
   def render("index.json", %{features: features}) do
-    render_many(features, Featureyard.FeatureAPIView, "feature.json")
+    %{ data: render_many(features, Featureyard.Api.FeatureView, "feature.json") }
   end
 
   def render("feature.json", %{feature: feature}) do

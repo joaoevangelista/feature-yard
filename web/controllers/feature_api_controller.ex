@@ -1,4 +1,4 @@
-defmodule Featureyard.FeatureAPIController do
+defmodule Featureyard.Api.FeatureController do
   import Ecto.Query
 
   use Featureyard.Web, :controller
