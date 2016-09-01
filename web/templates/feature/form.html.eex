@@ -16,14 +16,14 @@
     <div class="row">
       <div class="col s12">
         <%= label f, :name %>
-        <%= text_input f, :name, class: "blue-input" %>
+        <%= text_input f, :name, class: "deep-orange-input" %>
         <%= error_tag f, :name %>
       </div>
     </div>
     <div class="row">
       <div class="col s12">
         <%= label f, :key %>
-        <%= text_input f, :key, class: "blue-input" %>
+        <%= text_input f, :key, class: "deep-orange-input" %>
         <%= error_tag f, :key %>
       </div>
     </div>
@@ -43,7 +43,7 @@
     <div class="row margin-top-2x">
       <div class="col s12">
         <%= hidden_input f, :client_id %>
-        <button class="btn btn-large waves-effect waves-light blue" type="submit" name="action">Submit
+        <button class="btn btn-large waves-effect waves-light deep-orange" type="submit" name="action">Submit
           <i class="material-icons right">send</i>
         </button>
       </div>

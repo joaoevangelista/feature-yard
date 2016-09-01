@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <nav class="deep-orange">
+  <nav class="indigo">
     <div class="nav-wrapper container">
       <a href="#!" class="brand-logo">Feature Yard</a>
       <ul class="right hide-on-med-and-down">
