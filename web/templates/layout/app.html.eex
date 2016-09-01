@@ -17,7 +17,7 @@
 <body>
   <nav class="indigo">
     <div class="nav-wrapper container">
-      <a href="#!" class="brand-logo">Feature Yard</a>
+      <a href="/" class="brand-logo">Feature Yard</a>
       <ul class="right hide-on-med-and-down">
         <%= if Guardian.Plug.current_resource(@conn) do %>
         <li><%= link "Sign Out", to: sign_out_path(@conn, :delete), method: :delete %></li>
