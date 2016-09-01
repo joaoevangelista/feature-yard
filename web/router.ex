@@ -1,6 +1,5 @@
 defmodule Featureyard.Router do
   use Featureyard.Web, :router
-  use Addict.RoutesHelper
 
   pipeline :browser do
     plug :accepts, ["html"]
