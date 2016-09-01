@@ -3,9 +3,7 @@ defmodule Featureyard.ClientController do
 
   alias Featureyard.Client
 
-  plug Addict.Plugs.Authenticated when action in [:new, :create, :edit,
-   :update, :delete, :index, :show]
-  plug :action
+  plug Guardian.Plug.EnsureAuthenticated, [handler: Featureyard.SessionController]
 
   def index(conn, _params) do
     clients = Repo.all(Client)

@@ -10,28 +10,40 @@ defmodule Featureyard.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :browser_session do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.LoadResource
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
   scope "/", Featureyard do
-    pipe_through :browser # Use the default browser stack
+    pipe_through [:browser, :browser_session]
 
     get "/", PageController, :index
+
+    get    "/sign_in" , SessionController, :new   , as: :sign_in
+    post   "/sign_in" , SessionController, :create, as: :sign_in
+
+    get    "/sign_out", SessionController, :delete, as: :sign_out
+    delete "/sign_out", SessionController, :delete, as: :sign_out
+
+    get    "/sign_up" , UserController, :new   , as: :sign_up
+    post   "/sign_up" , UserController, :create, as: :sign_up
+
+    get    "/user"   , UserController, :show  , as: :user
+
     resources "/clients", ClientController do
-       resources "/features", FeatureController, except: [:index, :show]
+      resources "/features", FeatureController, except: [:index, :show]
     end
-
-  end
-
-  scope "/" do
-    addict :routes
   end
 
   # Other scopes may use custom stacks.
-   scope "/api", Featureyard do
-     pipe_through :api
+  scope "/api", Featureyard do
+    pipe_through :api
 
-     get "/features", Api.FeatureController, :index
-   end
+    get "/features", Api.FeatureController, :index
+  end
 end
