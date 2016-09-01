@@ -8,7 +8,7 @@ defmodule Featureyard.Api.FeatureController do
   alias Featureyard.Client
 
   def index(conn, _params) do
-    case conn |> get_req_header("x-api-key") |> Enum.at(0, "") |> Base.decode64 do
+    case conn |> get_req_header("x-token") |> Enum.at(0, "") |> Base.decode64 do
       {:ok, key} ->
         client = Repo.get_by!(Client, key: key)
         |> Repo.preload(:features)
