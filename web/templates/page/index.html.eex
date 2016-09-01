@@ -7,7 +7,9 @@
     <p>
       Toggle the features for each client that use your product.
     </p>
+    <%= if Guardian.Plug.current_resource(@conn)  do %>
     <a class="waves-effect blue waves-light btn-large" href="/clients">
       <i class="material-icons right">arrow_forward</i>Go to clients</a>
+      <% end %>
+    </div>
   </div>
-</div>
