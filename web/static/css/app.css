@@ -1,4 +1,7 @@
 /* This file is for your main application css. */
+code {
+  font-family: "Roboto Mono", monospace;
+}
 .margin-top-2x {
   margin-top: 2rem;
 }
