@@ -14,12 +14,12 @@
   </div>
 </div>
 <div class="row">
-  <div class="col s12 m6">
+  <div class="col s12 m7">
     <div class="card grey lighten-5">
       <div class="card-content grey-text darken-1">
         <span class="card-title">Client Key</span>
         <p>
-          <code id="key-box"><%= @base64_key %></code>
+          <code id="key-box" class="long-text"><%= @base64_key %></code>
         </p>
         </div>
         <div class="card-action">

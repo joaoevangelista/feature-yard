@@ -37,3 +37,6 @@ input[type="password"].deep-orange-input:focus {
   color: white;
   background-color: transparent;
 }
+.long-text {
+  word-wrap: break-word;
+}
