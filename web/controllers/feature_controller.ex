@@ -58,6 +58,6 @@ defmodule Featureyard.FeatureController do
 
             conn
             |> put_flash(:info, "Feature deleted successfully.")
-            |> redirect(to: client_path(conn, :index, feature.client_id))
+            |> redirect(to: client_path(conn, :index))
           end
         end
