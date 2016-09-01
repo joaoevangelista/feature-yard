@@ -32,6 +32,6 @@ defmodule Featureyard.Router do
    scope "/api", Featureyard do
      pipe_through :api
 
-     get "/features", FeatureAPIController, :fetch_features_for_client
+     get "/features", Api.FeatureController, :index
    end
 end
