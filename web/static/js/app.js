@@ -13,6 +13,7 @@
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
 import "turbolinks"
+import "jquery"
 import Clipboard from "clipboard";
 // Import local files
 //
@@ -29,7 +30,7 @@ $(document).on("turbolinks:load", () => {
 
   var clipboard = new Clipboard('.copyable');
 
-  clipboard.on('success', function(e) {
+  clipboard.on('success', (e) => {
     Materialize.toast('Key copied to clipboard !', 4000);
     e.clearSelection();
   });
