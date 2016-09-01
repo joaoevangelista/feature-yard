@@ -4,7 +4,6 @@ defmodule Featureyard.Api.FeatureController do
   use Featureyard.Web, :controller
 
   alias Featureyard.Repo
-  alias Featureyard.Feature
   alias Featureyard.Client
 
   def index(conn, _params) do
