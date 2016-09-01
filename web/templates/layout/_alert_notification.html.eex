@@ -1,5 +1,5 @@
 <%= if @alert do %>
 <script>
-$(function() { Materialize.toast("<%= @alert %>", 4000)})
+(function() { Materialize.toast("<%= @alert %>", 4000)})();
 </script>
 <% end %>
