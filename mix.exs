@@ -40,7 +40,6 @@ defmodule Featureyard.Mixfile do
     {:phoenix_live_reload, "~> 1.0", only: :dev},
     {:gettext, "~> 0.11"},
     {:cowboy, "~> 1.0"},
-    {:addict, "~> 0.3"},
     { :uuid, "~> 1.1" },
     {:credo, "~> 0.4", only: [:dev, :test]},
     {:comeonin, "~> 2.5"},
