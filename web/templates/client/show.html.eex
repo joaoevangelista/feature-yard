@@ -19,7 +19,7 @@
       <div class="card-content white-text">
         <span class="card-title">Client Key</span>
         <p>
-          <code id="key-box"><%= @client.key %></code>
+          <code id="key-box"><%= @base64_key %></code>
         </p>
         </div>
         <div class="card-action">
