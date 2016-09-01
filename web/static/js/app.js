@@ -13,6 +13,7 @@
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
 import "turbolinks"
+import Clipboard from "clipboard";
 // Import local files
 //
 // Local files can be imported directly using relative
@@ -22,4 +23,14 @@ import "turbolinks"
 
 
 // NOTE: do not bind on event ready events since turbolinks now handles pages ready states
-$(document).on("turbolinks:load", () =>  $('.button-collapse').sideNav());
+$(document).on("turbolinks:load", () => {
+  // register sideNav listener
+  $('.button-collapse').sideNav();
+
+  var clipboard = new Clipboard('.copyable');
+
+  clipboard.on('success', function(e) {
+    Materialize.toast('Key copied to clipboard !', 4000);
+    e.clearSelection();
+  });
+});

@@ -32,3 +32,8 @@ input[type="password"].blue-input:focus {
     background-color: #2196F3;
     left: 24px;
 }
+.btn.btn-card {
+  box-shadow: none;
+  color: white;
+  background-color: transparent;
+}

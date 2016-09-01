@@ -65,7 +65,7 @@ exports.config = {
   },
 
   npm: {
-    whitelist: ["phoenix", "phoenix_html", "jquery" ,"turbolinks"],
+    whitelist: ["phoenix", "phoenix_html", "jquery" ,"turbolinks", "clipboard"],
     enabled: true
   }
 };

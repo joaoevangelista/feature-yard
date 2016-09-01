@@ -19,11 +19,11 @@
       <div class="card-content white-text">
         <span class="card-title">Client Key</span>
         <p>
-          <code><%= @client.key %></code>
+          <code id="key-box"><%= @client.key %></code>
         </p>
         </div>
         <div class="card-action">
-          <a href="#">Copy</a>
+          <button type="button" data-clipboard-target="#key-box" class="btn btn-card orange-text copyable">Copy</a>
         </div>
       </div>
     </div>
