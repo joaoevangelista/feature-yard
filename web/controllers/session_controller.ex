@@ -14,7 +14,7 @@ defmodule Featureyard.SessionController do
     case User.validate_password(user, user_params) do
       {:ok, user} ->
         conn
-        |> put_flash(:info, "Logged in.")
+        |> put_flash(:info, "Signed in.")
         |> Guardian.Plug.sign_in(user, :token)
         |> redirect(to: client_path(conn, :index))
       {:error, changeset} ->
@@ -24,7 +24,7 @@ defmodule Featureyard.SessionController do
 
   def delete(conn, _params) do
     Guardian.Plug.sign_out(conn)
-    |> put_flash(:info, "Logged out successfully.")
+    |> put_flash(:info, "Signed out successfully.")
     |> redirect(to: "/")
   end
 
