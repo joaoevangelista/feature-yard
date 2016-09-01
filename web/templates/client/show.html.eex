@@ -53,7 +53,7 @@
               <% end %>
             </td>
             <td class="text-right">
-              <%= link "Edit", to: client_feature_path(@conn, :edit, feature.client_id, feature), class: "waves-effect waves-cyan btn-flat" %>
+              <%= link "Edit", to: client_feature_path(@conn, :edit, feature.client_id, feature), class: "waves-effect waves-orange btn-flat" %>
             </td>
             <td class="text-right">
               <%= link "Remove", to: client_feature_path(@conn, :delete, feature.client_id, feature), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-red btn-flat" %>

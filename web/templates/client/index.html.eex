@@ -26,13 +26,13 @@
         <tr>
           <td><%= client.name %></td>
           <td>
-            <%= link "Features", to: client_path(@conn, :show, client), class: "waves-effect waves-deep-orange" %>
+            <%= link "Features", to: client_path(@conn, :show, client), class: "waves-effect waves-orange btn-flat" %>
           </td>
           <td>
-            <%= link "Edit", to: client_path(@conn, :edit, client), class: "waves-effect waves-deep-orange" %>
+            <%= link "Edit", to: client_path(@conn, :edit, client), class: "waves-effect waves-orange btn-flat" %>
           </td>
           <td>
-            <%= link "Delete", to: client_path(@conn, :delete, client), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-red" %>
+            <%= link "Delete", to: client_path(@conn, :delete, client), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-red btn-flat" %>
           </td>
         </tr>
     <% end %>
