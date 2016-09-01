@@ -16,7 +16,7 @@ defmodule Featureyard.SessionController do
         conn
         |> put_flash(:info, "Logged in.")
         |> Guardian.Plug.sign_in(user, :token)
-        |> redirect(to: user_path(conn, :show))
+        |> redirect(to: client_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end

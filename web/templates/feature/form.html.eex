@@ -15,15 +15,15 @@
     <% end %>
     <div class="row">
       <div class="col s12">
-        <%= label f, :name, class: "control-label" %>
-        <%= text_input f, :name, class: "form-control" %>
+        <%= label f, :name %>
+        <%= text_input f, :name, class: "blue-input" %>
         <%= error_tag f, :name %>
       </div>
     </div>
     <div class="row">
       <div class="col s12">
-        <%= label f, :key, class: "control-label" %>
-        <%= text_input f, :key, class: "form-control" %>
+        <%= label f, :key %>
+        <%= text_input f, :key, class: "blue-input" %>
         <%= error_tag f, :key %>
       </div>
     </div>
@@ -40,7 +40,7 @@
         <%= error_tag f, :enabled %>
       </div>
     </div>
-    <div class="row">
+    <div class="row margin-top-2x">
       <div class="col s12">
         <%= hidden_input f, :client_id %>
         <button class="btn btn-large waves-effect waves-light blue" type="submit" name="action">Submit
