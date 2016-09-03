@@ -57,7 +57,7 @@ defmodule Featureyard.FeatureController do
 
   def delete(conn, %{"id" => id}) do
     feature = Repo.get!(Feature, id)
-    client = Repo.preload(:client)
+    client = Repo.preload(feature ,:client)
 
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).
