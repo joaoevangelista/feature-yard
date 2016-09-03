@@ -31,11 +31,3 @@ config :guardian, Guardian,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-config :addict,
-  secret_key: "2432622431322445516d2f316b4d4a57387676727037384d4a57346565",
-  extra_validation: fn ({valid, errors}, user_params) -> {valid, errors} end, # define extra validation here
-  user_schema: Featureyard.User,
-  repo: Featureyard.Repo,
-  from_email: "no-reply@example.com", # CHANGE THIS
-mail_service: nil

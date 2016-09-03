@@ -35,7 +35,7 @@ defmodule Featureyard.Router do
     get    "/user"   , UserController, :show  , as: :user
 
     resources "/clients", ClientController do
-      resources "/features", FeatureController, except: [:index, :show]
+      resources "/features", FeatureController, except: [:show]
     end
   end
 

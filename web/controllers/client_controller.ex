@@ -29,7 +29,7 @@ defmodule Featureyard.ClientController do
   end
 
   def show(conn, %{"id" => id}) do
-    client = Repo.get!(Client, id) |> Repo.preload(:features)
+    client = Repo.get!(Client, id)
     client_key = Base.encode64(client.key)
     render(conn, "show.html", client: client, base64_key: client_key)
   end

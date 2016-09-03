@@ -1,16 +1,15 @@
 <div class="row">
   <div class="col s12">
-    <h2>Features for <%= @client.name %></h2>
+    <h2><%= @client.name %></h2>
   </div>
 </div>
 <div class="row">
   <div class="col s12">
     <div class="left-align">
-      <%= link "New feature", to: client_feature_path(@conn, :new, @client), class: "btn deep-orange waves-effect waves-deep-orange" %>
+      <%= link "Features", to: client_feature_path(@conn, :index, @client), class: "btn deep-orange waves-effect waves-deep-orange" %>
       &nbsp;
       <%= link "Edit client", to: client_path(@conn, :edit, @client), class: "btn deep-orange waves-effect waves-deep-orange" %>
     </div>
-
   </div>
 </div>
 <div class="row">
@@ -21,47 +20,10 @@
         <p>
           <code id="key-box" class="long-text"><%= @base64_key %></code>
         </p>
-        </div>
-        <div class="card-action">
-          <button type="button" data-clipboard-target="#key-box" class="btn waves-effect waves-orange btn-card orange-text copyable">Copy</a>
+      </div>
+      <div class="card-action">
+        <button type="button" data-clipboard-target="#key-box" class="btn waves-effect waves-orange btn-card orange-text copyable">Copy</a>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s12">
-      <table class="responsive-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Key</th>
-            <th>Enabled</th>
-            <th>Options</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= for feature <- @client.features do %>
-          <tr>
-            <td><%= feature.name %></td>
-            <td><code><%= feature.key %></code></td>
-            <td>
-              <%= if feature.enabled do %>
-              <i class="teal-text material-icons">done</i>
-              <% else %>
-              <i class="deep-orange-grey-text material-icons">highlight_off</i>
-              <% end %>
-            </td>
-            <td class="text-right">
-              <%= link "Edit", to: client_feature_path(@conn, :edit, feature.client_id, feature), class: "waves-effect waves-orange btn-flat" %>
-            </td>
-            <td class="text-right">
-              <%= link "Remove", to: client_feature_path(@conn, :delete, feature.client_id, feature), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-red btn-flat" %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <!-- features -->
     </div>
   </div>
