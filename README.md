@@ -1,4 +1,10 @@
-# Featureyard
+# Feature Yard
+
+Enable or disable the features your apps can consume
+
+![phoenix badge by [Nate Perry](https://dribbble.com/shots/1612621-Phoenix-Framework-Logo)](https://github.com/joaoevangelista/feature-yard/blob/master/art/phoenix-badge-light.png)
+
+
 
 To start your Phoenix app:
 
@@ -8,6 +14,8 @@ To start your Phoenix app:
   * Start Phoenix endpoint with `mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+
+## Production
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
