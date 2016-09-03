@@ -4,7 +4,7 @@ defmodule Featureyard.Client do
   schema "clients" do
     field :name, :string
     field :key, :string, default: UUID.uuid1()
-    has_many :features, Featureyard.Feature
+    has_many :features, Featureyard.Feature, on_delete: :delete_all
     timestamps()
   end
 
