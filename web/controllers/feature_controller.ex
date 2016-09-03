@@ -57,6 +57,7 @@ defmodule Featureyard.FeatureController do
 
   def delete(conn, %{"id" => id}) do
     feature = Repo.get!(Feature, id)
+    client = Repo.preload(:client)
 
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).
@@ -64,6 +65,6 @@ defmodule Featureyard.FeatureController do
 
     conn
     |> put_flash(:info, "Feature deleted successfully.")
-    |> redirect(to: client_path(conn, :index))
+    |> redirect(to: client_feature_path(conn, :index, client))
     end
 end
