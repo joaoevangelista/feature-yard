@@ -41,7 +41,7 @@ used to make conditionals on the devices for example
 
 The fetching and update strategy is up to you.
 
-#### Audiences
+### Audiences
 
 Similarly to scopes audiences provides a further filter to your features, so
 each can be applied for example in a certain user based on their account, plan, etc.
