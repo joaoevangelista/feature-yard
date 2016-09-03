@@ -1,13 +1,21 @@
 defmodule Featureyard.ClientControllerTest do
   use Featureyard.ConnCase
 
+  import Featureyard.Factory
+
   alias Featureyard.Client
+
   @valid_attrs %{name: "some content"}
   @invalid_attrs %{}
 
-  test "lists all entries on index", %{conn: conn} do
-    conn = get conn, client_path(conn, :index)
-    assert html_response(conn, 200) =~ "Listing clients"
+  setup do
+      user = insert(:user)
+  end
+
+  test "lists all entries on index", %{conn: conn, user: user} do
+    auth_conn = sign_in(conn, user)
+    auth_conn = get auth_conn, client_path(auth_conn, :index)
+    assert html_response(auth_conn, 200) =~ "Listing clients"
   end
 
   test "renders form for new resources", %{conn: conn} do

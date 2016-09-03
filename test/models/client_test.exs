@@ -3,8 +3,8 @@ defmodule Featureyard.ClientTest do
 
   alias Featureyard.Client
 
-  @valid_attrs %{name: "some content"}
-  @invalid_attrs %{}
+  @valid_attrs %{name: "A valid name"}
+  @invalid_attrs %{name: ""}
 
   test "changeset with valid attributes" do
     changeset = Client.changeset(%Client{}, @valid_attrs)

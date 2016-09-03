@@ -3,8 +3,8 @@ defmodule Featureyard.FeatureTest do
 
   alias Featureyard.Feature
 
-  @valid_attrs %{enabled: true, key: "some content", name: "some content"}
-  @invalid_attrs %{}
+  @valid_attrs %{enabled: true, key: "FEATURE_FOO", name: "Foo feature"}
+  @invalid_attrs %{enabled: true, name: "Foo feature"}
 
   test "changeset with valid attributes" do
     changeset = Feature.changeset(%Feature{}, @valid_attrs)

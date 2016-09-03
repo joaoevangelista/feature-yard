@@ -32,6 +32,7 @@ defmodule Featureyard.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.2.1"},
     {:ecto, "~> 2.0.4", override: true},
+    {:ex_machina, "~> 1.0", only: :test},
     {:poison, "~> 2.2.0", override: true},
     {:phoenix_pubsub, "~> 1.0"},
     {:phoenix_ecto, "~> 3.0"},
