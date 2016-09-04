@@ -34,9 +34,10 @@ defmodule Featureyard.Router do
 
     get    "/user"   , UserController, :show  , as: :user
 
+    put    "/clients/:id/key", ClientController, :reset_key, as: :reset_key
     resources "/clients", ClientController do
       resources "/features", FeatureController, except: [:show] do
-        resources "/audiences", AudienceController 
+        resources "/audiences", AudienceController
       end
     end
   end

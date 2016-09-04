@@ -65,4 +65,20 @@ defmodule Featureyard.ClientController do
     |> put_flash(:info, "Client deleted successfully.")
     |> redirect(to: client_path(conn, :index))
   end
+
+  # PUT /clients/1/key
+  def reset_key(conn, %{"id" => id}) do
+    client = Repo.get! Client, id
+    changeset = Client.changeset(client, %{key: UUID.uuid1()})
+    case Repo.update(changeset) do
+      {:ok, saved_client} ->
+        conn
+        |> put_flash(:info, "Client key regenerated successfully.")
+        |> redirect(to: client_path(conn, :show, saved_client))
+      {:error, _changeset} ->
+        conn
+        |> put_flash(:error, "Failed to regeneted key.")
+        |> redirect(to: client_path(conn, :show, client))
+    end
+  end
 end

@@ -22,7 +22,13 @@
         </p>
       </div>
       <div class="card-action">
-        <button type="button" data-clipboard-target="#key-box" class="btn waves-effect waves-blue btn-card lix-text copyable">Copy</a>
+        <button type="button" data-clipboard-target="#key-box" class="btn waves-effect waves-blue btn-card lix-text copyable">
+          <i class="material-icons left">content_copy</i> Copy
+        </button>
+        <%= link raw("<i class='material-icons left'>refresh</i> Refresh"),
+         to: reset_key_path(@conn, :reset_key, @client),
+         class: "btn waves-effect waves-blue btn-card lix-text",
+         method: :put %>
         </div>
       </div>
     </div>

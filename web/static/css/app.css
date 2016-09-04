@@ -52,3 +52,6 @@ input[type=checkbox]:checked:not(:disabled) ~ .lever:active::after, input[type=c
 .btn:hover, .btn-large:hover {
   background-color: #8F62A3;
 }
+form.link {
+  display: inline;
+}
