@@ -32,6 +32,9 @@
             <i class="deep-orange-grey-text material-icons">highlight_off</i>
             <% end %>
           </td>
+          <td>
+            <%= link "Audience", to: client_feature_audience_path(@conn, :index, feature.client_id, feature) %>
+          </td>
           <td class="text-right">
             <%= link "Edit", to: client_feature_path(@conn, :edit, feature.client_id, feature), class: "waves-effect waves-orange" %>
           </td>

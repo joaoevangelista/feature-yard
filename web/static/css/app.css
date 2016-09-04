@@ -21,7 +21,7 @@ nav .brand-logo {
 }
 
 input[type="text"].deep-orange-input:focus, input[type="email"].deep-orange-input:focus,
-input[type="password"].deep-orange-input:focus {
+input[type="password"].deep-orange-input:focus, textarea.deep-orange-input:focus {
   border-bottom: 1px solid #FF5722 !important;
   box-shadow: 0 1px 0 0 #FF5722 !important;
 }

@@ -14,14 +14,14 @@
                   </div>
     <% end %>
     <div class="row">
-      <div class="col s12">
+      <div class="input-field col s12">
         <%= label f, :name %>
         <%= text_input f, :name, class: "deep-orange-input" %>
         <%= error_tag f, :name %>
       </div>
     </div>
     <div class="row">
-      <div class="col s12">
+      <div class="input-field col s12">
         <%= label f, :key %>
         <%= text_input f, :key, class: "deep-orange-input" %>
         <%= error_tag f, :key %>
