@@ -1,0 +1,30 @@
+<h2>Listing audiences</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+      <th>Key</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for audience <- @audiences do %>
+    <tr>
+      <td><%= audience.feature_id %></td>
+      <td><%= audience.description %></td>
+      <td><%= audience.key %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: client_feature_audience_path(@conn, :show, @feature.client, @feature, audience), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: client_feature_audience_path(@conn, :edit, @feature.client, @feature, audience), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: client_feature_audience_path(@conn, :delete, @feature.client, @feature, audience), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New audience", to: client_feature_audience_path(@conn, :new, @feature.client, @feature) %>

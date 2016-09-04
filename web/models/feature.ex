@@ -6,7 +6,7 @@ defmodule Featureyard.Feature do
     field :key, :string
     field :enabled, :boolean, default: false
     belongs_to :client, Featureyard.Client
-
+    has_many :audiences, Featureyard.Audience, on_delete: :delete_all
     timestamps()
   end
 

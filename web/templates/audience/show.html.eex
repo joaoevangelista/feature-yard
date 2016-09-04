@@ -1,0 +1,22 @@
+<h2>Show audience</h2>
+
+<ul>
+
+  <li>
+    <strong>Feature:</strong>
+
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @audience.description %>
+  </li>
+
+  <li>
+    <strong>Key:</strong>
+    <%= @audience.key %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: client_feature_audience_path(@conn, :edit, @feature, @feature, @audience) %>

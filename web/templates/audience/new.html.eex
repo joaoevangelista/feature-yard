@@ -1,0 +1,5 @@
+<h2>New audience</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action:  client_feature_audience_path(@conn, :create,
+                         @feature.client, @feature) %>
