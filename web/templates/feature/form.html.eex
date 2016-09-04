@@ -3,15 +3,15 @@
     <%= form_for @changeset, @action, fn f -> %>
     <%= if @changeset.action do %>
     <div class="row">
-                    <div class="col s12">
-                      <div class="card lix-purple lighten-3">
-                        <div class="card-content white-text">
-                          <span class="card-title">Ops!</span>
-      <p>Oops, something went wrong! Please check the errors below.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+      <div class="col s12">
+        <div class="card lix-purple lighten-3">
+          <div class="card-content white-text">
+            <span class="card-title">Ops!</span>
+            <p>Oops, something went wrong! Please check the errors below.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <% end %>
     <div class="row">
       <div class="input-field col s12">
@@ -43,9 +43,14 @@
     <div class="row margin-top-2x">
       <div class="col s12">
         <%= hidden_input f, :client_id %>
-        <button class="btn btn-large waves-effect waves-light lix-purple" type="submit" name="action">Submit
-          <i class="material-icons right">send</i>
+        <button class="btn btn-large waves-effect waves-light lix-purple hide-on-med-and-down" type="submit" name="action">Submit
+          <i class="material-icons right">check</i>
         </button>
+        <div class="fixed-action-btn hide-on-large-only" style="bottom: 24px; right: 24px;">
+          <button type="submit" class="btn-floating btn-large lix-purple">
+            <i class="large material-icons">check</i>
+          </button>
+        </div>
       </div>
     </div>
   </div>

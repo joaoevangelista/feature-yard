@@ -25,9 +25,14 @@
 </div>
 <div class="row">
   <div class="col s12">
-    <button class="btn btn-large waves-effect waves-light lix-purple" type="submit" name="action">Submit
-      <i class="material-icons right">send</i>
+    <button class="btn btn-large waves-effect waves-light lix-purple hide-on-med-and-down" type="submit" name="action">Submit
+      <i class="material-icons right">check</i>
     </button>
+    <div class="fixed-action-btn hide-on-large-only" style="bottom: 24px; right: 24px;">
+      <button type="submit" class="btn-floating btn-large lix-purple">
+        <i class="large material-icons">check</i>
+      </button>
+    </div>
   </div>
 </div>
 <% end %>
