@@ -6,9 +6,9 @@
 <div class="row">
   <div class="col s12">
     <div class="left-align">
-      <%= link "Features", to: client_feature_path(@conn, :index, @client), class: "btn deep-orange waves-effect waves-deep-orange" %>
+      <%= link "Features", to: client_feature_path(@conn, :index, @client), class: "btn lix-purple waves-effect waves-red" %>
       &nbsp;
-      <%= link "Edit client", to: client_path(@conn, :edit, @client), class: "btn deep-orange waves-effect waves-deep-orange" %>
+      <%= link "Edit client", to: client_path(@conn, :edit, @client), class: "btn lix-purple waves-effect waves-red" %>
     </div>
   </div>
 </div>
@@ -22,7 +22,7 @@
         </p>
       </div>
       <div class="card-action">
-        <button type="button" data-clipboard-target="#key-box" class="btn waves-effect waves-orange btn-card orange-text copyable">Copy</a>
+        <button type="button" data-clipboard-target="#key-box" class="btn waves-effect waves-blue btn-card lix-text copyable">Copy</a>
         </div>
       </div>
     </div>

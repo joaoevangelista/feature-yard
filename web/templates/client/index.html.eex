@@ -5,7 +5,7 @@
 </div>
 <div class="row">
   <div class="col s12">
-  <%= link "New client", to: client_path(@conn, :new), class: "btn deep-orange waves-effect waves-deep-orange" %>
+  <%= link "New client", to: client_path(@conn, :new), class: "btn lix-purple waves-effect waves-red" %>
 </div>
 </div>
 <div class="row">
@@ -25,13 +25,13 @@
         <tr>
           <td><%= client.name %></td>
           <td>
-            <%= link "Show", to: client_path(@conn, :show, client), class: "waves-effect waves-orange" %>
+            <%= link "Show", to: client_path(@conn, :show, client), class: "waves-effect waves-blue" %>
           </td>
           <td>
-            <%= link "Features", to: client_feature_path(@conn, :index, client), class: "waves-effect waves-orange" %>
+            <%= link "Features", to: client_feature_path(@conn, :index, client), class: "waves-effect waves-blue" %>
           </td>
           <td>
-            <%= link "Edit", to: client_path(@conn, :edit, client), class: "waves-effect waves-orange" %>
+            <%= link "Edit", to: client_path(@conn, :edit, client), class: "waves-effect waves-blue" %>
           </td>
           <td>
             <%= link "Delete", to: client_path(@conn, :delete, client), method: :delete, data: [confirm: "Are you sure?"], class: "waves-effect waves-red" %>

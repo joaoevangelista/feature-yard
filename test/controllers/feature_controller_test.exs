@@ -15,9 +15,9 @@ defmodule Featureyard.FeatureControllerTest do
     assert html_response(conn, 200) =~ "New feature"
   end
 
-  test "creates resource and redirects when data is valid", %{conn: conn} do
+  test "creates resource and lix-purpleirects when data is valid", %{conn: conn} do
     conn = post conn, feature_path(conn, :create), feature: @valid_attrs
-    assert redirected_to(conn) == feature_path(conn, :index)
+    assert lix-purpleirected_to(conn) == feature_path(conn, :index)
     assert Repo.get_by(Feature, @valid_attrs)
   end
 
@@ -44,10 +44,10 @@ defmodule Featureyard.FeatureControllerTest do
     assert html_response(conn, 200) =~ "Edit feature"
   end
 
-  test "updates chosen resource and redirects when data is valid", %{conn: conn} do
+  test "updates chosen resource and lix-purpleirects when data is valid", %{conn: conn} do
     feature = Repo.insert! %Feature{}
     conn = put conn, feature_path(conn, :update, feature), feature: @valid_attrs
-    assert redirected_to(conn) == feature_path(conn, :show, feature)
+    assert lix-purpleirected_to(conn) == feature_path(conn, :show, feature)
     assert Repo.get_by(Feature, @valid_attrs)
   end
 
@@ -60,7 +60,7 @@ defmodule Featureyard.FeatureControllerTest do
   test "deletes chosen resource", %{conn: conn} do
     feature = Repo.insert! %Feature{}
     conn = delete conn, feature_path(conn, :delete, feature)
-    assert redirected_to(conn) == feature_path(conn, :index)
+    assert lix-purpleirected_to(conn) == feature_path(conn, :index)
     refute Repo.get(Feature, feature.id)
   end
 end

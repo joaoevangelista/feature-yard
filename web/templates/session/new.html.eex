@@ -10,18 +10,18 @@
 
       <div class="form-group">
         <%= label f, :email %>
-        <%= text_input f, :email, class: "deep-orange-input" %>
+        <%= text_input f, :email, class: "red-input" %>
         <%= error_tag f, :email %>
       </div>
 
       <div class="form-group">
         <%= label f, :password %>
-        <%= password_input f, :password, class: "deep-orange-input" %>
+        <%= password_input f, :password, class: "red-input" %>
         <%= error_tag f, :password %>
       </div>
 
       <div class="form-group">
-        <%= submit "Sign In", class: "btn btn-large waves-effect waves-light deep-orange" %>
+        <%= submit "Sign In", class: "btn btn-large waves-effect waves-light lix-purple" %>
       </div>
     <% end %>
   </div>

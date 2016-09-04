@@ -23,9 +23,9 @@ defmodule Featureyard.ClientControllerTest do
     assert html_response(conn, 200) =~ "New client"
   end
 
-  test "creates resource and redirects when data is valid", %{conn: conn} do
+  test "creates resource and lix-purpleirects when data is valid", %{conn: conn} do
     conn = post conn, client_path(conn, :create), client: @valid_attrs
-    assert redirected_to(conn) == client_path(conn, :index)
+    assert lix-purpleirected_to(conn) == client_path(conn, :index)
     assert Repo.get_by(Client, @valid_attrs)
   end
 
@@ -52,10 +52,10 @@ defmodule Featureyard.ClientControllerTest do
     assert html_response(conn, 200) =~ "Edit client"
   end
 
-  test "updates chosen resource and redirects when data is valid", %{conn: conn} do
+  test "updates chosen resource and lix-purpleirects when data is valid", %{conn: conn} do
     client = Repo.insert! %Client{}
     conn = put conn, client_path(conn, :update, client), client: @valid_attrs
-    assert redirected_to(conn) == client_path(conn, :show, client)
+    assert lix-purpleirected_to(conn) == client_path(conn, :show, client)
     assert Repo.get_by(Client, @valid_attrs)
   end
 
@@ -68,7 +68,7 @@ defmodule Featureyard.ClientControllerTest do
   test "deletes chosen resource", %{conn: conn} do
     client = Repo.insert! %Client{}
     conn = delete conn, client_path(conn, :delete, client)
-    assert redirected_to(conn) == client_path(conn, :index)
+    assert lix-purpleirected_to(conn) == client_path(conn, :index)
     refute Repo.get(Client, client.id)
   end
 end
