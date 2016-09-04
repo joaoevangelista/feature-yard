@@ -15,6 +15,6 @@ defmodule Featureyard.Audience do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:description, :key, :feature_id])
-    |> validate_required([:key])
+    |> validate_required([:key, :feature_id])
   end
 end

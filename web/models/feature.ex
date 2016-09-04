@@ -16,6 +16,6 @@ defmodule Featureyard.Feature do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name, :key, :enabled, :client_id])
-    |> validate_required([:name, :key, :enabled])
+    |> validate_required([:name, :key, :enabled, :client_id])
   end
 end
