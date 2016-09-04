@@ -21,7 +21,7 @@ nav .brand-logo {
 }
 
 input[type="text"].deep-orange-input:focus, input[type="email"].deep-orange-input:focus,
-input[type="password"].deep-orange-input:focus {
+input[type="password"].deep-orange-input:focus, textarea.deep-orange-input:focus {
   border-bottom: 1px solid #FF5722 !important;
   box-shadow: 0 1px 0 0 #FF5722 !important;
 }
@@ -39,4 +39,7 @@ input[type="password"].deep-orange-input:focus {
 }
 .long-text {
   word-wrap: break-word;
+}
+input[type=checkbox]:checked:not(:disabled) ~ .lever:active::after, input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::after {
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(255,87,34,0.1);
 }

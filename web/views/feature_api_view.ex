@@ -5,10 +5,13 @@ defmodule Featureyard.Api.FeatureView do
     %{ data: render_many(features, Featureyard.Api.FeatureView, "feature.json") }
   end
 
+
+
   def render("feature.json", %{feature: feature}) do
     %{id: feature.id,
     enabled: feature.enabled,
     name: feature.name,
-    key: feature.key}
+    key: feature.key,
+    audiences: render_many(feature.audiences, Featureyard.AudienceView, "show.json")}
   end
 end
