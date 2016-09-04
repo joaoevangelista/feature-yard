@@ -24,6 +24,7 @@
       <a href="/" class="brand-logo">Feature Yard</a>
       <ul class="right hide-on-med-and-down">
         <%= if Guardian.Plug.current_resource(@conn) do %>
+        <li><%= link "Clients", to: client_path(@conn, :index) %></li>
         <li><%= link "Sign Out", to: sign_out_path(@conn, :delete), method: :delete %></li>
         <% else %>
         <li><%= link "Sign In", to: sign_in_path(@conn, :new) %></li>
@@ -32,6 +33,7 @@
       </ul>
       <ul class="side-nav" id="nav-mobile">
         <%= if Guardian.Plug.current_resource(@conn) do %>
+        <li><%= link "Clients", to: client_path(@conn, :index) %></li>
         <li><%= link "Sign Out", to: sign_out_path(@conn, :delete), method: :delete %></li>
         <% else %>
         <li><%= link "Sign In", to: sign_in_path(@conn, :new) %></li>
