@@ -11,9 +11,9 @@ defmodule Featureyard.Api.FeatureController do
       {:ok, key} ->
         client = Repo.get_by!(Client, key: key)
         |> Repo.preload(:features)
-        features = client.features
+        features = Repo.preload(client.features, :audiences)
         render(conn, :index, features: features)
-      {:error, _reason} ->
+      {:error} ->
         render(conn, "error.json")
     end
   end
