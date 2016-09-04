@@ -45,18 +45,23 @@ defmodule Featureyard.Mixfile do
     {:credo, "~> 0.4", only: [:dev, :test]},
     {:comeonin, "~> 2.5"},
     {:guardian, "~> 0.12.0"},
-    {:gen_guardian, git: "https://github.com/victorlcampos/gen_guardian", only: :dev}]
-  end
+    {:gen_guardian, git: "https://github.com/victorlcampos/gen_guardian", only: :dev},
+    # monitoring stack
+    {:exometer_core, github: "PSPDFKit-labs/exometer_core", override: true},
+    {:exometer, github: "PSPDFKit-labs/exometer"},
+    {:edown, github: "uwiger/edown", tag: "0.7", override: true}
+  ]
+end
 
-  # Aliases are shortcuts or tasks specific to the current project.
-  # For example, to create, migrate and run the seeds file at once:
-  #
-  #     $ mix ecto.setup
-  #
-  # See the documentation for `Mix` for more info on aliases.
-  defp aliases do
-    ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-    "ecto.reset": ["ecto.drop", "ecto.setup"],
-    "test": ["ecto.create --quiet", "ecto.migrate", "test"]]
-  end
+# Aliases are shortcuts or tasks specific to the current project.
+# For example, to create, migrate and run the seeds file at once:
+#
+#     $ mix ecto.setup
+#
+# See the documentation for `Mix` for more info on aliases.
+defp aliases do
+  ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+  "ecto.reset": ["ecto.drop", "ecto.setup"],
+  "test": ["ecto.create --quiet", "ecto.migrate", "test"]]
+end
 end
